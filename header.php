@@ -31,8 +31,8 @@
 				<div class="col-4">
 					<?php dynamic_sidebar( 'top-nav-left' ); ?>
 				</div>
-				<div class="col"></div>
-				<div class="col-4 ">
+				<div class="col-lg-4 col-sm-1"></div>
+				<div class="col-lg-4 col-sm-7">
 
 				<div class="">
 				<?php dynamic_sidebar( 'top-nav-right' ); ?>

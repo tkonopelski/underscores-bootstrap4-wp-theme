@@ -16,7 +16,7 @@ get_header();
 
 	
 		<div class="row">
-				<div class="col-6 pr-5">
+				<div class="col-md-6 pr-5 mb-4">
 					<h1 class="font-weight-bold mt-5">
 						<?php the_field('text1'); ?>
 					</h1>
@@ -28,7 +28,7 @@ get_header();
 					</button>
 				</div>
 
-				<div class="col-6">
+				<div class="col-md-6">
 
 					<div id="cf7Block" class="text-center rounded">
 
