@@ -49,6 +49,7 @@ if ( ! function_exists( 'wpms_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'wpms' ),
+			//'primary' => __( 'Primary Menu', 'wpms' ),
 		) );
 
 		/*
@@ -135,13 +136,23 @@ function wpms_scripts() {
 	}
 
 	wp_enqueue_style( 'wpms-bootstrap-css', get_template_directory_uri() . '/assets/bootstrap-4.4.1/css/bootstrap.min.css' );
-
+	
+	wp_enqueue_script( 'wpms-jquery', get_template_directory_uri() . '/assets/jquery-3.4.1.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'wpms-bootstrap-js', get_template_directory_uri() . '/assets/bootstrap-4.4.1/js/bootstrap.min.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'wpms-custom', get_template_directory_uri() . '/assets/custom.js', array(), wpms_get_version(), true );
+	wp_enqueue_style( 'wpms-custom-css', get_template_directory_uri() . '/assets/custom.css', array(), wpms_get_version() );
+	wp_enqueue_script( 'wpms-custom-js', get_template_directory_uri() . '/assets/custom.js', array(), wpms_get_version(), true );
 
 }
 add_action( 'wp_enqueue_scripts', 'wpms_scripts' );
+
+/**
+ * https://github.com/wp-bootstrap/wp-bootstrap-navwalker
+ */
+function register_navwalker(){
+	require_once get_template_directory() . '/assets/class-wp-bootstrap-navwalker.php';
+}
+add_action( 'after_setup_theme', 'register_navwalker' );
 
 
 function wpms_get_version() { 
@@ -168,6 +179,7 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
 
 /**
  * Load Jetpack compatibility file.
