@@ -51,6 +51,8 @@ body {
 .orangeButtons {
     background: #fd9801;
     border-color: #fd9801;
+    color: #fff;
+    padding: 10px 30px;
 }
 
 body.page-template-page-cta-php {

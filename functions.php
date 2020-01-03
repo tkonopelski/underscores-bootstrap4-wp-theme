@@ -10,7 +10,7 @@
 if ( ! function_exists( 'wpms_setup' ) ) :
 
 
-	define('WPMS_VERSION', 1.5);
+	define('WPMS_VERSION', 1.6);
 
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -163,6 +163,10 @@ function wpms_scripts() {
 
 	wp_enqueue_style( 'wpms-custom-css', get_template_directory_uri() . '/assets/custom.css', array(), wpms_get_version() );
 	wp_enqueue_script( 'wpms-custom-js', get_template_directory_uri() . '/assets/custom.js', array(), wpms_get_version(), true );
+
+	wp_enqueue_script( 'fontawesome', 'https://kit.fontawesome.com/2754e2ebf2.js', array(), '20151215', true);
+	
+	wp_script_add_data('fontawesome', 'crossorigin', 'anonymous');
 
 }
 add_action( 'wp_enqueue_scripts', 'wpms_scripts' );

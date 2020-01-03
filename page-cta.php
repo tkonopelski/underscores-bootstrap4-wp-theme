@@ -17,10 +17,10 @@ get_header();
 	
 		<div class="row">
 				<div class="col-6 pr-5">
-					<h1>
+					<h1 class="font-weight-bold mt-5">
 						<?php the_field('text1'); ?>
 					</h1>
-					<p>
+					<p class="mt-4 mr-4 mb-4">
 						<?php the_field('more'); ?>
 					</p>
 					<button type="button" id="ctaButton" class="btn btn-warning orangeButtons">

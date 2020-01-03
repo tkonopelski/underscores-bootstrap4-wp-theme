@@ -32,7 +32,7 @@
 					<?php dynamic_sidebar( 'top-nav-left' ); ?>
 				</div>
 				<div class="col"></div>
-				<div class="col-3 ">
+				<div class="col-4 ">
 
 				<div class="">
 				<?php dynamic_sidebar( 'top-nav-right' ); ?>
