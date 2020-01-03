@@ -10,7 +10,7 @@
 if ( ! function_exists( 'wpms_setup' ) ) :
 
 
-	define('WPMS_VERSION', 1.1);
+	define('WPMS_VERSION', 1.2);
 
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -118,6 +118,27 @@ function wpms_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Top Nav Left', 'wpms' ),
+		'id'            => 'top-nav-left',
+		'description'   => esc_html__( 'Add widgets here.', 'wpms' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<div>',
+		'after_title'   => '</div>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Top Nav Right', 'wpms' ),
+		'id'            => 'top-nav-right',
+		'description'   => esc_html__( 'Add widgets here.', 'wpms' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<div>',
+		'after_title'   => '</div>',
+	) );
+
 }
 add_action( 'widgets_init', 'wpms_widgets_init' );
 
@@ -149,16 +170,16 @@ add_action( 'wp_enqueue_scripts', 'wpms_scripts' );
 /**
  * https://github.com/wp-bootstrap/wp-bootstrap-navwalker
  */
-function register_navwalker(){
+function wpms_register_navwalker(){
 	require_once get_template_directory() . '/assets/class-wp-bootstrap-navwalker.php';
 }
-add_action( 'after_setup_theme', 'register_navwalker' );
+add_action( 'after_setup_theme', 'wpms_register_navwalker' );
 
 
 function wpms_get_version() { 
 	return WPMS_VERSION;
 }
-
+ 
 
 /**
  * Implement the Custom Header feature.

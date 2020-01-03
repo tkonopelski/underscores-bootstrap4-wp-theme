@@ -25,32 +25,31 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wpms' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$wpms_description = get_bloginfo( 'description', 'display' );
-			if ( $wpms_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $wpms_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation111 navbar navbar-expand-md navbar-light bg-light" role="navigation">
+		<div id="topNav" class="container">
+			<div class="row">
+				<div class="col-4">
+					<?php dynamic_sidebar( 'top-nav-left' ); ?>
+				</div>
+				<div class="col"></div>
+				<div class="col-3 ">
+
+				<div class="">
+				<?php dynamic_sidebar( 'top-nav-right' ); ?>
+				</div>
+
+				</div>
+		</div>
+
+		</div>
+
+		<nav id="site-navigation" class="main-navigation111 navbar navbar-expand-md navbar-light " role="navigation">
 		<div class="container">
 
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
         		<span class="navbar-toggler-icon"></span>
     		</button>
-			<a class="navbar-brand" href="#">MENU</a>
+			<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">LOGO</a>
 			<?php
 			wp_nav_menu( array(
 				'theme_location'  => 'menu-1',
