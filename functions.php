@@ -10,7 +10,7 @@
 if ( ! function_exists( 'wpms_setup' ) ) :
 
 
-	define('WPMS_VERSION', 1.2);
+	define('WPMS_VERSION', 1.5);
 
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.

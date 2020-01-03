@@ -13,22 +13,29 @@
 
 	</div><!-- #content -->
 
-	<footer id="footer" class="site-footer">
+	<footer id="footer" class="site-footer d-none d-md-block">
 
 	<div class="container">
         
-      </div>
+	  </div>
+	  
+
 
 	</footer><!-- #colophon -->
 </div><!-- #page -->
+
+
+
+
+
 
 <?php 
 wp_footer();
 ?>
 
 
-<div class="modal" tabindex="-1" role="dialog" id="footerModal"
-  <div class="modal-dialog" role="document">
+<div class="modal" tabindex="-1" role="dialog" id="footerModal">
+  <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Modal title</h5>
