@@ -38,7 +38,7 @@
 				<?php dynamic_sidebar( 'top-nav-right' ); ?>
 				</div>
 
-				</div>
+			</div>
 		</div>
 
 		</div>

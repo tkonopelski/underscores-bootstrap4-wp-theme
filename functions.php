@@ -171,7 +171,7 @@ add_action( 'wp_enqueue_scripts', 'wpms_scripts' );
  * https://github.com/wp-bootstrap/wp-bootstrap-navwalker
  */
 function wpms_register_navwalker(){
-	require_once get_template_directory() . '/assets/class-wp-bootstrap-navwalker.php';
+	require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 }
 add_action( 'after_setup_theme', 'wpms_register_navwalker' );
 
